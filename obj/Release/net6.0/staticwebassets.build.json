@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "1OKGVd/K8hqU/FoPGs6PWTaKvJT4+SIPexOSexABhSs=",
+  "Source": "AngularSample",
+  "BasePath": "_content/AngularSample",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "AngularSample\\wwwroot",
+      "Source": "AngularSample",
+      "ContentRoot": "C:\\Users\\dg-user\\Documents\\attendance-management\\wwwroot\\",
+      "BasePath": "_content/AngularSample",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\dg-user\\Documents\\attendance-management\\wwwroot\\favicon.ico",
+      "SourceId": "AngularSample",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\dg-user\\Documents\\attendance-management\\wwwroot\\",
+      "BasePath": "_content/AngularSample",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    }
+  ]
+}
