@@ -1,0 +1,63 @@
+
+
+ .example{
+    display: flex;
+    align-items: flex-start;
+ }
+
+.tableleft{
+    border: solid 2px black;
+    font-size: 100%;
+    width: 100%;
+    margin: 0 -100px 0 -100px;
+}
+
+.tableright{
+    border: solid 2px black;
+    font-size: 100%;
+    width: 100%;
+    margin: 0 -100px 0 100px;
+}
+
+ .title th{
+    border: none;
+}
+ 
+ .btnsidetext{
+    color: red;
+ }
+
+ .titletext{
+    font-size: 40px;
+ }
+ 
+.table-true{
+    background-color: rgb(255, 255, 204);
+}
+.table-false{
+    background-color: rgb(213, 210, 210);
+}
+
+th,td{
+    border: solid 1px black;
+    font-size: 100%;
+}
+
+.examplettext{
+    padding: 1px;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+
+    position: relative;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+button{
+    width: 118px;
+    height: 30px;
+    padding: 0px;
+}

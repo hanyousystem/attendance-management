@@ -1,0 +1,231 @@
+  
+  <div style="margin-left: -120px;">
+    <table align="center" style="margin-left: 20px;" class="title">
+      <tr>
+        <th class="titletext" width="50%"><b>在席管理ツール</b></th>
+        <th style="text-align: left;vertical-align: bottom;" width="10%"><button style="font-size: 17px;width: 135px;height: 37px;" onclick="window.location.reload();"><b>情報更新（F5）</b></button></th>
+        <th class="btnsidetext" style="vertical-align: bottom;" width="100%">※閲覧・編集の前に、必ず最新の情報に更新してください。</th>
+      </tr>
+    </table>
+  </div>
+  
+
+<!-- ユーザー一覧を表示するテーブル -->
+<div class="example">
+  <table cellspacing="1" class="tableleft">
+  <thead >
+    <tr style="text-align: center;background-color:rgb(204, 248, 214);">
+      <th colspan="5">調査支援第１担当 </th>
+     </tr>
+    <tr style="text-align: center;background-color: bisque;">
+      <th width="120">
+        電話応答の可否
+      </th>
+      <th width="140">
+        氏名
+      </th>
+      <th width="100">
+        内線番号
+      </th>
+      <th width="503">
+        コメント（40字まで）
+      </th>
+    </tr>
+  </thead>
+  <tbody >
+    <!-- ユーザー情報を反復処理で表示する -->
+    <tr *ngFor="let dataItem of UserList" >
+      <!-- 応答可否を変更するボタン -->
+      <td align="center" ><button [ngClass]="{'table-true':dataItem.canRespond,'table-false':!dataItem.canRespond}" id="btnrespond" type="button"   (click)="dataItem.canRespond=!dataItem.canRespond;updateItem(dataItem)"><b>{{dataItem.canRespond ? '応答可' : '応答不可'}}</b></button></td>
+      <!-- ユーザー名を表示する -->
+      <td [ngClass]="{'table-true':dataItem.canRespond,'table-false':!dataItem.canRespond}"><b>{{dataItem.name}}</b></td>
+      <!-- 電話番号を表示する --> 
+      <td style="text-align: center" [ngClass]="{'table-true':dataItem.canRespond,'table-false':!dataItem.canRespond}"><b>{{dataItem.phoneNumber}}</b></td>
+      <!-- コメントを入力できるようにする -->
+      <td><input type="text" title={{dataItem.comment}} id="comment" class="examplettext" [(ngModel)]="dataItem.comment" (blur)="updateItem(dataItem)"></td>
+    </tr>
+  </tbody>
+</table>
+
+<table  cellspacing="1" class="tableright">
+  <thead >
+    <tr style="text-align: center;background-color:rgb(204, 248, 214);">
+      <th colspan="5">調査支援第２担当 </th>
+     </tr>
+    <tr style="text-align: center;background-color: bisque;">
+      <th width="120">
+        電話応答の可否
+      </th>
+      <th width="139">
+        氏名
+      </th>
+      <th width="100">
+        内線番号
+      </th>
+      <th width="499">
+        コメント（40字まで）
+      </th>
+    </tr>
+  </thead>
+  <tbody >
+    <!-- ユーザー情報を反復処理で表示する -->
+    <tr *ngFor="let dataItem of UserList02">
+      <!-- 応答可否を変更するボタン -->
+      <td align="center" ><button [ngClass]="{'table-true':dataItem.canRespond,'table-false':!dataItem.canRespond}" type="button" (click)="dataItem.canRespond=!dataItem.canRespond;updateItem02(dataItem)"><b>{{dataItem.canRespond ? '応答可' : '応答不可'}}</b></button></td>
+      <!-- ユーザー名を表示する -->
+      <td [ngClass]="{'table-true':dataItem.canRespond,'table-false':!dataItem.canRespond}"><b>{{dataItem.name}}</b></td>
+      <!-- 内線番号を表示する -->
+      <td style="text-align: center" [ngClass]="{'table-true':dataItem.canRespond,'table-false':!dataItem.canRespond}"><b>{{dataItem.phoneNumber}}</b></td>
+      <!-- コメントを入力できるようにする -->
+      <td ><input type="text" title={{dataItem.comment}} class="examplettext" [(ngModel)]="dataItem.comment" (blur)="updateItem02(dataItem)"></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<div class="example">
+  <table cellspacing="1" class="tableleft">
+    <thead >
+      <tr style="text-align: center;background-color:rgb(204, 248, 214);">
+        <th colspan="5">調査支援第３担当 </th>
+       </tr>
+      <tr style="text-align: center;background-color: bisque;">
+        <th width="120">
+          電話応答の可否
+        </th>
+        <th width="142">
+          氏名
+        </th>  
+        <th width="101">
+          内線番号
+        </th>
+        <th width="511">
+          コメント（40字まで）
+        </th>
+      </tr>
+    </thead>
+    <tbody >
+      <!-- ユーザー情報を反復処理で表示する -->
+      <tr *ngFor="let dataItem of UserList03" >
+        <!-- 応答可否を変更するボタン -->
+        <td align="center" ><button [ngClass]="{'table-true':dataItem.canRespond,'table-false':!dataItem.canRespond}" type="button"  (click)="dataItem.canRespond=!dataItem.canRespond;updateItem03(dataItem)"><b>{{dataItem.canRespond ? '応答可' : '応答不可'}}</b></button></td>
+        <!-- ユーザー名を表示する -->
+        <td [ngClass]="{'table-true':dataItem.canRespond,'table-false':!dataItem.canRespond}"><b>{{dataItem.name}}</b></td>
+        <!-- 内線番号を表示する -->
+        <td style="text-align: center" [ngClass]="{'table-true':dataItem.canRespond,'table-false':!dataItem.canRespond}"><b>{{dataItem.phoneNumber}}</b></td>
+        <!-- コメントを入力できるようにする -->
+        <td ><input type="text" title={{dataItem.comment}} class="examplettext" [(ngModel)]="dataItem.comment" (blur)="updateItem03(dataItem)"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table  cellspacing="1" class="tableright">
+    <thead >
+      <tr style="text-align: center;background-color:rgb(204, 248, 214);">
+        <th colspan="5">調査支援第４担当 </th>
+       </tr>
+      <tr style="text-align: center;background-color: bisque;">
+        <th width="120">
+          電話応答の可否
+        </th>
+        <th width="143">
+          氏名
+        </th>
+        <th width="100">
+          内線番号
+        </th>
+        <th width="506">
+          コメント（40字まで）
+        </th>
+      </tr>
+    </thead>
+    <tbody >
+      <!-- ユーザー情報を反復処理で表示する -->
+      <tr *ngFor="let dataItem of UserList04">
+        <!-- 応答可否を変更するボタン -->
+        <td align="center" ><button [ngClass]="{'table-true':dataItem.canRespond,'table-false':!dataItem.canRespond}" type="button" (click)="dataItem.canRespond=!dataItem.canRespond;updateItem04(dataItem)"><b>{{dataItem.canRespond ? '応答可' : '応答不可'}}</b></button></td>
+        <!-- ユーザー名を表示する -->
+        <td [ngClass]="{'table-true':dataItem.canRespond,'table-false':!dataItem.canRespond}"><b>{{dataItem.name}}</b></td>
+        <!-- 内線番号を表示する -->
+        <td style="text-align: center" [ngClass]="{'table-true':dataItem.canRespond,'table-false':!dataItem.canRespond}"><b>{{dataItem.phoneNumber}}</b></td>
+        <!-- コメントを入力できるようにする -->
+        <td ><input type="text" title={{dataItem.comment}} class="examplettext" [(ngModel)]="dataItem.comment" (blur)="updateItem04(dataItem)"></td>
+      </tr>
+    </tbody>
+  </table>  
+</div>
+
+
+<div class="example">
+  <table  cellspacing="1" class="tableleft">
+    <thead>
+      <tr style="text-align: center;background-color:rgb(204, 248, 214);">
+      <th colspan="5">調査支援第５担当 </th>
+      </tr>
+      <tr style="text-align: center;background-color: bisque;">
+        <th width="120">
+          電話応答の可否
+        </th>
+        <th width="142">
+          氏名
+        </th>
+        <th width="100">
+          内線番号
+        </th>
+        <th width="501">
+          コメント（40字まで）
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- ユーザー情報を反復処理で表示する -->
+      <tr *ngFor="let dataItem of UserList05">
+        <!-- 応答可否を変更するボタン -->
+        <td align="center" ><button [ngClass]="{'table-true':dataItem.canRespond,'table-false':!dataItem.canRespond}" type="button"  (click)="dataItem.canRespond=!dataItem.canRespond;updateItem05(dataItem)"><b>{{dataItem.canRespond ? '応答可' : '応答不可'}}</b></button></td>
+        <!-- ユーザー名を表示する -->
+        <td [ngClass]="{'table-true':dataItem.canRespond,'table-false':!dataItem.canRespond}"><b>{{dataItem.name}}</b></td>
+        <!-- 内線番号を表示する -->
+        <td style="text-align: center" [ngClass]="{'table-true':dataItem.canRespond,'table-false':!dataItem.canRespond}"><b>{{dataItem.phoneNumber}}</b></td>
+        <!-- コメントを入力できるようにする -->
+        <td ><input type="text" title={{dataItem.comment}} class="examplettext" [(ngModel)]="dataItem.comment" (blur)="updateItem05(dataItem)"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table  cellspacing="1" class="tableright">
+    <thead>
+      <tr style="text-align: center;background-color:rgb(204, 248, 214);">
+      <th colspan="5">指導監</th>
+      </tr>
+      <tr style="text-align: center;background-color: bisque;">
+        <th width="120">
+          電話応答の可否
+        </th>
+        <th width="145">
+          氏名
+        </th>
+        <th width="100">
+          内線番号
+        </th>
+        <th width="493">
+          コメント（40字まで）
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- ユーザー情報を反復処理で表示する -->
+      <tr *ngFor="let dataItem of UserListShidou">
+        <!-- 応答可否を変更するボタン -->
+        <td align="center" ><button [ngClass]="{'table-true':dataItem.canRespond,'table-false':!dataItem.canRespond}" type="button"  (click)="dataItem.canRespond=!dataItem.canRespond;updateItemShidou(dataItem)"><b>{{dataItem.canRespond ? '応答可' : '応答不可'}}</b></button></td>
+        <!-- ユーザー名を表示する -->
+        <td [ngClass]="{'table-true':dataItem.canRespond,'table-false':!dataItem.canRespond}"><b>{{dataItem.name}}</b></td>
+        <!-- 内線番号を表示する -->
+        <td style="text-align: center" [ngClass]="{'table-true':dataItem.canRespond,'table-false':!dataItem.canRespond}"><b>{{dataItem.phoneNumber}}</b></td>
+        <!-- コメントを入力できるようにする -->
+        <td ><input type="text" title={{dataItem.comment}} class="examplettext" [(ngModel)]="dataItem.comment" (blur)="updateItemShidou(dataItem)">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
